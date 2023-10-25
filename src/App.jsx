@@ -3,13 +3,17 @@
 // import viteLogo from "/vite.svg";
 import "./App.css";
 
-import Form from "./components/Form";
+import FForm from "./components/FForm";
+// import CForm from "./components/CForm";
+// import MyForm from "./components/myForm";
 function App() {
   return (
     <>
       {/* <h1>Form Builder</h1> */}
 
-      <Form />
+      <FForm />
+      {/* <CForm /> */}
+      {/* <MyForm /> */}
     </>
   );
 }

@@ -1,5 +1,6 @@
 form {
-  max-width: 400px;
+  max-width: 390px;
+  object-fit: cover;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -14,7 +15,7 @@ label {
 }
 
 input {
-  width: 390px;
+  width: 360px;
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
@@ -25,16 +26,30 @@ h3 {
   margin-top: 20px;
 }
 
-button {
+/* button {
   padding: 10px 20px;
-  background-color: #91bceb;
-  color: #fff;
+  background-color: #91bceb; */
+/* background-color: white; */
+/* color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
-}
+} */
 
 button:hover {
   background-color: #6b97c7;
+}
+.main-title {
+  height: 118px;
+  border: 1px solid #ccc;
+}
+.question-ans-container {
+  height: auto;
+  border: 1px solid #ccc;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

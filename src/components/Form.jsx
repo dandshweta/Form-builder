@@ -36,6 +36,14 @@ const Form = () => {
     updatedQuestions[index][name] = value;
     setFormData({ ...formData, questions: updatedQuestions });
   };
+  // const handleQuestionChange = (e) => {
+  //   const { name, value } = e.target;
+  //   const updatedQuestions = formData.questions.map((question) => ({
+  //     ...question,
+  //     [name]: value,
+  //   }));
+  //   setFormData({ ...formData, questions: updatedQuestions });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,48 +52,55 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          placeholder="Untitled Form"
-          value={formData.title}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <input
-          id="description"
-          name="description"
-          placeholder="Form description"
-          value={formData.description}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        {formData.questions.map((question, index) => (
-          <div key={index}>
+      <div className="main-container">
+        <div className="main-title">
+          <div>
             <input
               type="text"
-              name="questionText"
-              placeholder="Question"
-              value={question.questionText}
-              onChange={(e) => handleQuestionChange(index, e)}
-            />
-            <input
-              type="text"
-              name="answer"
-              placeholder="Answer"
-              value={question.answer}
-              onChange={(e) => handleQuestionChange(index, e)}
+              id="title"
+              name="title"
+              placeholder="Untitled Form"
+              value={formData.title}
+              onChange={handleInputChange}
             />
           </div>
-        ))}
-        <button type="button" onClick={handleAddQuestion}>
-          Add Question
-        </button>
+          <div>
+            <input
+              id="description"
+              name="description"
+              placeholder="Form description"
+              value={formData.description}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className="question-ans-container">
+          <div>
+            {formData.questions.map((question, index) => (
+              <div key={index}>
+                <input
+                  type="text"
+                  name="questionText"
+                  placeholder="Question"
+                  value={question.questionText}
+                  onChange={(e) => handleQuestionChange(index, e)}
+                />
+                <input
+                  type="text"
+                  name="answer"
+                  placeholder="Answer"
+                  value={question.answer}
+                  onChange={(e) => handleQuestionChange(index, e)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+      <button type="button" onClick={handleAddQuestion}>
+        Add Question
+      </button>
+
       <button type="submit">Submit</button>
     </form>
   );
